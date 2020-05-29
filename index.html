@@ -39,26 +39,26 @@
 			<div class="row" style="width: 100%;">
 				<div class="col-lg-2">
 					<div style="border-style: solid; border-color: white; border-width: 1px;">
-						<p style="color:white; text-align:center; font-size:2em; font-weight:bold; margin-bottom: 0.5rem;">00</p>
-						<p style="color:white; text-align:center; font-size:0.8em;  margin-bottom: 0.5rem;">Days</p>
+						<p style="color:white; text-align:center; font-size:2em; font-weight:bold; margin-bottom: 0.2rem;">03</p>
+						<p style="color:white; text-align:center; font-size:0.8em;  margin-bottom: 0.2rem;">Days</p>
 					</div>
 				</div>
 				<div class="col-lg-2">
 					<div style="border-style: solid; border-color: white; border-width: 1px;">
-					<p style="color:white; text-align:center; font-size:2em; font-weight:bold; margin-bottom: 0.5rem;">00</p>
-						<p style="color:white; text-align:center; font-size:0.8em;  margin-bottom: 0.5rem;">Hours</p>
+					<p id="horatexto" style="color:white; text-align:center; font-size:2em; font-weight:bold; margin-bottom: 0.2rem;">07</p>
+						<p style="color:white; text-align:center; font-size:0.8em;  margin-bottom: 0.2rem;">Hours</p>
 					</div>	
 				</div>
 				<div class="col-lg-2">
 					<div style="border-style: solid; border-color: white; border-width: 1px;">
-					<p style="color:white; text-align:center; font-size:2em; font-weight:bold; margin-bottom: 0.5rem;">00</p>
-						<p style="color:white; text-align:center; font-size:0.8em;  margin-bottom: 0.5rem;">Minutes</p>
+					<p id="minutotexto" style="color:white; text-align:center; font-size:2em; font-weight:bold; margin-bottom: 0.2rem;">59</p>
+						<p style="color:white; text-align:center; font-size:0.8em;  margin-bottom: 0.2rem;">Minutes</p>
 					</div>	
 				</div>
 				<div class="col-lg-2">
 					<div style="border-style: solid; border-color: white; border-width: 1px;">
-					  <p style="color:white; text-align:center; font-size:2em; font-weight:bold; margin-bottom: 0.5rem;">00</p>
-						<p style="color:white; text-align:center; font-size:0.8em;  margin-bottom: 0.5rem;">Seconds</p>
+					  <p id="segundotexto" style="color:white; text-align:center; font-size:2em; font-weight:bold; margin-bottom: 0.2rem;">59</p>
+						<p style="color:white; text-align:center; font-size:0.8em;  margin-bottom: 0.2rem;">Seconds</p>
 					</div>			
 				</div>
 			
@@ -668,11 +668,61 @@
 	<script type='text/javascript' src='js\frontend2.min.js?ver=2.2.17'></script>
 	<script type='text/javascript' src='js\wp-embed.js?ver=5.2.6'></script>
 	<script>
-		function mover(){
+		setInterval(myTimer, 1000);
+		var segundos = 59;
+		var minutos = 59;
+		var horas = 7;
+		
+		function myTimer(){
 		 
-			document.getElementById("message").scrollIntoView();
 			
-		}//
+			if(segundos > 9){
+				document.getElementById("segundotexto").textContent=segundos;
+			}else{
+			  document.getElementById("segundotexto").textContent="0"+segundos;
+			}
+			
+			if(segundos >0 ){
+				segundos -=1;
+			}else{
+				segundos=59;
+				
+				if(minutos >0 ){
+					minutos -=1;
+					
+					if(minutos > 9){
+				document.getElementById("minutotexto").textContent=minutos;
+			}else{
+			  document.getElementById("minutotexto").textContent="0"+minutos;
+			}
+					
+					
+				
+				}else{
+					minutos = 59;
+					
+					if(horas > 0){
+						horas -=1;
+						
+							if(horas > 9){
+				document.getElementById("horatexto").textContent=horas;
+			}else{
+			  document.getElementById("horatexto").textContent="0"+horas;
+			}
+						
+						
+						
+					}else{
+						horas=23;
+					}
+					
+					
+				}
+				
+			}//
+		 
+		 
+		}
 		
 		document.getElementById("my_link").addEventListener("click",(e)=>{
     e.preventDefault();
