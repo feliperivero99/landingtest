@@ -692,6 +692,7 @@
 		var horas = 7;
 		var dias = 3;
 		var control = 1;
+		var control2 = 1;
 		
 		
 		
@@ -752,13 +753,15 @@ function checkCookie() {
   var username = getCookie();
   if (username != "") {
    console.log("Welcome again " + username);
+   if(control2== 1){
    var res = username.split("-");
 					dias = parseInt(res[0]);
 					horas = parseInt(res[1]);
 					minutos = parseInt(res[2]);
 					segundos = parseInt(res[3]);
 					control = parseInt(res[4]);
-   
+					control2=0;
+   }
    
   } else {
     setCookie();
