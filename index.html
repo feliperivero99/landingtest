@@ -736,13 +736,13 @@ function checkCookie() {
   }
 }
 
-	function setCookie2() {
+	function setCookie2(d,h,m,s,c) {
 			var d = new Date();
   d.setTime(d.getTime() + (100*24*60*60*1000));
   var expires = "expires="+ d.toUTCString();
 		
 		document.cookie = "timer" + "=" + "" + ";" + expires + ";path=/";
-		var sub= dias+"-"+horas+"-"+minutos+"-"+segundos+"-"+control; 
+		var sub= d+"-"+h+"-"+m+"-"+s+"-"+c; 
 		console.log(sub);
 		document.cookie = "timer" + "=" + sub + ";" + expires + ";path=/";
 		console.log("guardo  dos");
