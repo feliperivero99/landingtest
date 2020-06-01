@@ -691,8 +691,54 @@
 		var minutos = 59;
 		var horas = 7;
 		
+		
+		
+		function setCookie() {
+			var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+		
+		
+		 var sub= horas+"-"+minutos+"-"+segundos; 
+		document.cookie = "timer" + "=" + sub + ";" + expires + ";path=/";
+		console.log("guardo");
+		}
+		
+		function getCookie() {
+			var name = "timer" + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+      console.log(decodedCookie);
+	  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+	  
+  return "";
+}
+
+function checkCookie() {
+  var username = getCookie();
+  if (username != "") {
+   alert("Welcome again " + username);
+  } else {
+   // username = prompt("Please enter your name:", "");
+    if (username != "" && username != null) {
+      setCookie();
+    }
+  }
+}
+
+		
+		
 		function myTimer(){
-		 
+			checkCookie();
 			
 			if(segundos > 9){
 				document.getElementById("segundotexto").textContent=segundos;
