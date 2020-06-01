@@ -714,7 +714,9 @@
     while (c.charAt(0) == ' ') {
       c = c.substring(1);
     }
+	
     if (c.indexOf(name) == 0) {
+		console.log();
       return c.substring(name.length, c.length);
     }
   }
@@ -728,10 +730,7 @@ function checkCookie() {
   if (username != "") {
    console.log("Welcome again " + username);
   } else {
-   // username = prompt("Please enter your name:", "");
-    if (username != "" && username != null) {
-      setCookie();
-    }
+    setCookie();
   }
 }
 
