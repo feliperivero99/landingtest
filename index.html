@@ -39,7 +39,7 @@
 			<div class="row" style="width: 100%;">
 				<div class="col-lg-2">
 					<div style="border-style: solid; border-color: white; border-width: 1px;">
-						<p style="color:white; text-align:center; font-size:2em; font-weight:bold; margin-bottom: 0.2rem;">03</p>
+						<p id="diastexto" style="color:white; text-align:center; font-size:2em; font-weight:bold; margin-bottom: 0.2rem;">03</p>
 						<p style="color:white; text-align:center; font-size:0.8em;  margin-bottom: 0.2rem;">Days</p>
 					</div>
 				</div>
@@ -690,6 +690,8 @@
 		var segundos = 59;
 		var minutos = 59;
 		var horas = 7;
+		var dias = 3;
+		var control = 1;
 		
 		
 		
@@ -699,7 +701,7 @@
   var expires = "expires="+ d.toUTCString();
 		
 		
-		 var sub= horas+"-"+minutos+"-"+segundos; 
+		 var sub= dias+"-"+horas+"-"+minutos+"-"+segundos+"-"+control; 
 		document.cookie = "timer" + "=" + sub + ";" + expires + ";path=/";
 		console.log("guardo");
 		}
@@ -737,6 +739,7 @@ function checkCookie() {
 		
 		
 		function myTimer(){
+			if(control==1){
 			checkCookie();
 			
 			if(segundos > 9){
@@ -777,13 +780,23 @@ function checkCookie() {
 						
 					}else{
 						horas=23;
+						if(dias > 0){
+							dias -=1;
+							document.getElementById("diastexto").textContent="0"+dias;
+						
+						}else{
+							control=0;
+						}
+						
+						
+						
 					}
 					
 					
 				}
 				
 			}//
-		 
+		 }
 		 
 		}
 		
