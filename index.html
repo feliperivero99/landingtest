@@ -743,6 +743,7 @@ function checkCookie() {
 		
 		document.cookie = "timer" + "=" + "" + ";" + expires + ";path=/";
 		var sub= dias+"-"+horas+"-"+minutos+"-"+segundos+"-"+control; 
+		console.log(sub);
 		document.cookie = "timer" + "=" + sub + ";" + expires + ";path=/";
 		console.log("guardo  dos");
 		}
