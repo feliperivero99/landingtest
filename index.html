@@ -727,22 +727,43 @@
 
 }
 
+		function getCookie2() {
+			var name = "timer" + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+      console.log(decodedCookie);
+	  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+	
+    if (c.indexOf(name) == 0) {
+		console.log();
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+	  
+
+}
+
 function checkCookie() {
   var username = getCookie();
   if (username != "") {
-   console.log("Welcome again " + username);
+   //console.log("Welcome again " + username);
   } else {
     setCookie();
   }
 }
 
-	function setCookie2(d,h,m,s,c) {
+	function setCookie2() {
 			var d = new Date();
   d.setTime(d.getTime() + (100*24*60*60*1000));
   var expires = "expires="+ d.toUTCString();
 		
 		document.cookie = "timer" + "=" + "" + ";" + expires + ";path=/";
-		var sub= d+"-"+h+"-"+m+"-"+s+"-"+c; 
+		var sub= dias+"-"+horas+"-"+minutos+"-"+segundos+"-"+control; 
 		console.log(sub);
 		document.cookie = "timer" + "=" + sub + ";" + expires + ";path=/";
 		console.log("guardo  dos");
@@ -764,10 +785,12 @@ function checkCookie() {
 				segundos -=1;
 			}else{
 				segundos=59;
-				setCookie2();
+				
 				if(minutos >0 ){
 					minutos -=1;
-					
+					setCookie2();
+					var ultratext = getCookie2();
+					console.log(ultratext);
 					if(minutos > 9){
 				document.getElementById("minutotexto").textContent=minutos;
 			}else{
@@ -781,7 +804,9 @@ function checkCookie() {
 					
 					if(horas > 0){
 						horas -=1;
-						
+						setCookie2();
+						var ultratext = getCookie2();
+						console.log(ultratext);
 							if(horas > 9){
 				document.getElementById("horatexto").textContent=horas;
 			}else{
