@@ -736,6 +736,17 @@ function checkCookie() {
   }
 }
 
+	function setCookie2() {
+			var d = new Date();
+  d.setTime(d.getTime() + (100*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+		
+		document.cookie = "timer" + "=" + "" + ";" + expires + ";path=/";
+		var sub= dias+"-"+horas+"-"+minutos+"-"+segundos+"-"+control; 
+		document.cookie = "timer" + "=" + sub + ";" + expires + ";path=/";
+		console.log("guardo");
+		}
+
 		
 		
 		function myTimer(){
@@ -752,7 +763,7 @@ function checkCookie() {
 				segundos -=1;
 			}else{
 				segundos=59;
-				
+				setCookie2();
 				if(minutos >0 ){
 					minutos -=1;
 					
