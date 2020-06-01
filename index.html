@@ -761,6 +761,27 @@ function checkCookie() {
 					segundos = parseInt(res[3]);
 					control = parseInt(res[4]);
 					control2=0;
+					
+			if(segundos > 9){
+				document.getElementById("segundotexto").textContent=segundos;
+			}else{
+			  document.getElementById("segundotexto").textContent="0"+segundos;
+			}		
+					
+			if(minutos > 9){
+				document.getElementById("minutotexto").textContent=minutos;
+			}else{
+			  document.getElementById("minutotexto").textContent="0"+minutos;
+			}
+
+			if(horas > 9){
+				document.getElementById("horatexto").textContent=horas;
+			}else{
+			  document.getElementById("horatexto").textContent="0"+horas;
+			}			
+			
+				document.getElementById("diastexto").textContent="0"+dias;			
+					
    }
    
   } else {
