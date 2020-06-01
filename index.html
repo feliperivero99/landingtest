@@ -751,7 +751,15 @@
 function checkCookie() {
   var username = getCookie();
   if (username != "") {
-   //console.log("Welcome again " + username);
+   console.log("Welcome again " + username);
+   var res = username.split("-");
+					dias = parseInt(res[0]);
+					horas = parseInt(res[1]);
+					minutos = parseInt(res[2]);
+					segundos = parseInt(res[3]);
+					control = parseInt(res[4]);
+   
+   
   } else {
     setCookie();
   }
@@ -792,11 +800,13 @@ function checkCookie() {
 					var ultratext = getCookie2();
 					console.log(ultratext);
 					var res = ultratext.split("-");
-					console.log(res[0]);
-					console.log(res[1]);
-					console.log(res[2]);
-					console.log(res[3]);
-					console.log(res[4]);
+					dias = parseInt(res[0]);
+					horas = parseInt(res[1]);
+					minutos = parseInt(res[2]);
+					segundos = parseInt(res[3]);
+					control = parseInt(res[4]);
+					
+					
 					if(minutos > 9){
 				document.getElementById("minutotexto").textContent=minutos;
 			}else{
@@ -813,6 +823,13 @@ function checkCookie() {
 						setCookie2();
 						var ultratext = getCookie2();
 						console.log(ultratext);
+						var res = ultratext.split("-");
+					dias = parseInt(res[0]);
+					horas = parseInt(res[1]);
+					minutos = parseInt(res[2]);
+					segundos = parseInt(res[3]);
+					control = parseInt(res[4]);
+						
 							if(horas > 9){
 				document.getElementById("horatexto").textContent=horas;
 			}else{
