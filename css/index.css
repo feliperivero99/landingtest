@@ -1438,7 +1438,7 @@
          overflow: hidden;
          border-top-right-radius: 30px;
          box-shadow: rgba(0, 0, 0, 0.27) -8px 0px 42px 0px;
-         background-image: linear-gradient(rgba(33, 68, 169, 0.28), rgba(33, 68, 169, 0.28)), url("../images/header.png"), linear-gradient(rgb(62, 127, 238), rgb(62, 127, 238)) !important;
+         background-image:  url("../images/header.png") !important;
          background-size: auto, cover, auto !important;
          background-position: 0px 0px, 0% 50%, 0px 0px !important;
          background-attachment: scroll, scroll, scroll !important;
