@@ -1505,9 +1505,9 @@
      [data-css="tve-u-16054623c38"] {
          border-top-left-radius: 5px;
          overflow: hidden;
-         box-shadow: rgba(0, 0, 0, 0.24) -8px 0px 36px 0px;
-         background-color: white !important;
-         background-image:  url("../images/header.png"), url("../images/img-4.png") !important;
+        
+         background-color: transparent!important;
+         background-image:  url("../images/header.png") !important;
          background-size: 100% 78% !important;
          background-position: 0px 0px, 50% 50%, 0px 0px !important;
          background-attachment: scroll, scroll, scroll !important;
