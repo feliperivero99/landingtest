@@ -1509,7 +1509,7 @@
          background-color: transparent!important;
          background-image:  url("../images/header.png") !important;
              background-size: 130% 120% !important;
-    background-position: 100% -100px,50% 50%, 0px 0px !important;
+    background-position: -160px -100px,50% 50%, 0px 0px !important;
     
          background-attachment: scroll, scroll, scroll !important;
          background-repeat: no-repeat, no-repeat, no-repeat !important;
