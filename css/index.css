@@ -2826,6 +2826,11 @@
     
     max-width: 25% !important;
 }
+
+     [data-css="tve-u-1609d6d6ed6"] {
+         display: flex;
+    justify-content: center;
+    }
 	 
 	 
  }
